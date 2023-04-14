@@ -8,15 +8,10 @@ namespace responsivecolorproject
         Button currentButton;
         static byte index;
         byte tempIndex;
-        List<Button> botonesMenu;
-        bool rainbowMode;
-
-
         public Form1()
         {
             InitializeComponent();
             random = new();
-            botonesMenu = new List<Button> { buttonHome, buttonUsers, buttonSettings, buttonHelp, buttonCredits };
             currentButton = new Button();
         }
 
@@ -59,73 +54,22 @@ namespace responsivecolorproject
         {
             HighLight(sender, true);
 
-
         }
 
         private void buttonSettings_Click(object sender, EventArgs e)
         {
             HighLight(sender, true);
 
-
         }
 
         private void buttonHelp_Click(object sender, EventArgs e)
         {
             HighLight(sender, true);
-
-
-        }
-
-        private async void button1_Click(object sender, EventArgs e)
-        {
-            rainbowMode = !rainbowMode;
-
-            if (rainbowMode)
-            { 
-                pictureBox1.Image = Properties.Resources.R; 
-            } 
-            else 
-            { 
-                pictureBox1.Image = Properties.Resources.X; 
-            }
-
-            while(rainbowMode)
-            {
-                foreach (Button button in botonesMenu)
-                {
-                    HighLight(button, true);
-                    await Task.Delay(100);
-                }
-            }
-        }
-
-        private async void buttonRainbow2_Click(object sender, EventArgs e)
-        {
-            rainbowMode = !rainbowMode;
-
-            if (rainbowMode)
-            {
-                pictureBox1.Image = Properties.Resources.R;  //le puse r porque  si, no hay mas misterio
-            }
-            else
-            {
-                pictureBox1.Image = Properties.Resources.X;
-            }
-
-            while (rainbowMode)
-            {
-                foreach (Button button in botonesMenu)
-                {
-                    HighLight(button, false);
-                    await Task.Delay(100);
-                }
-            }
         }
 
         private void buttonCredits_Click(object sender, EventArgs e)
         {
             HighLight(sender, true);
-
         }
     }
 }
