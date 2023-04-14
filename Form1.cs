@@ -5,6 +5,7 @@ namespace responsivecolorproject
         //Fields
         Random random;
         Button currentButton;
+        byte index, tempIndex;
 
         public Form1()
         {
@@ -22,16 +23,21 @@ namespace responsivecolorproject
 
         private void HighLight(Object button)
         {
-            if ( button != null )
+
+            if(currentButton != (Button)button)
             {
-                if(currentButton != (Button)button)
+                UnHighLight();
+                currentButton = (Button)button;
+                tempIndex = (byte)random.Next(ThemeColor.ColorsList.Count);
+                while(tempIndex == index)
                 {
-                    UnHighLight();
-                    currentButton = (Button)button;
-                    currentButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(64)))), ((int)(((byte)(34)))));
-                    currentButton.Font = new Font("Segoe UI", 11.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+                    tempIndex = (byte)random.Next(ThemeColor.ColorsList.Count);
                 }
+                index = tempIndex;
+                currentButton.BackColor = ThemeColor.ColorsList[index];
+                currentButton.Font = new Font("Segoe UI", 11.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             }
+            
         }   
             
         private void UnHighLight()
