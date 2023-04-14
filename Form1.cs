@@ -6,7 +6,8 @@ namespace responsivecolorproject
     {
         Random random;
         Button currentButton;
-        byte index, tempIndex;
+        static byte index;
+        byte tempIndex;
         List<Button> botonesMenu;
         bool rainbowMode;
 
@@ -93,7 +94,7 @@ namespace responsivecolorproject
                 foreach (Button button in botonesMenu)
                 {
                     HighLight(button, true);
-                    await Task.Delay(500);
+                    await Task.Delay(100);
                 }
             }
         }
@@ -116,7 +117,7 @@ namespace responsivecolorproject
                 foreach (Button button in botonesMenu)
                 {
                     HighLight(button, false);
-                    await Task.Delay(500);
+                    await Task.Delay(100);
                 }
             }
         }
