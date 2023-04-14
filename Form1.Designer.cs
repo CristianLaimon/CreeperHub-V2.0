@@ -36,9 +36,14 @@
             this.buttonHome = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBoxCreeper = new System.Windows.Forms.PictureBox();
+            this.buttonRainbow = new System.Windows.Forms.Button();
+            this.buttonRainbow2 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCreeper)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -177,18 +182,63 @@
             this.pictureBoxCreeper.TabIndex = 1;
             this.pictureBoxCreeper.TabStop = false;
             // 
+            // buttonRainbow
+            // 
+            this.buttonRainbow.Location = new System.Drawing.Point(366, 530);
+            this.buttonRainbow.Name = "buttonRainbow";
+            this.buttonRainbow.Size = new System.Drawing.Size(177, 37);
+            this.buttonRainbow.TabIndex = 1;
+            this.buttonRainbow.Text = "RAINBOW MODE";
+            this.buttonRainbow.UseVisualStyleBackColor = true;
+            this.buttonRainbow.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // buttonRainbow2
+            // 
+            this.buttonRainbow2.Location = new System.Drawing.Point(674, 530);
+            this.buttonRainbow2.Name = "buttonRainbow2";
+            this.buttonRainbow2.Size = new System.Drawing.Size(177, 37);
+            this.buttonRainbow2.TabIndex = 2;
+            this.buttonRainbow2.Text = "RAINBOW MODE 2";
+            this.buttonRainbow2.UseVisualStyleBackColor = true;
+            this.buttonRainbow2.Click += new System.EventHandler(this.buttonRainbow2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::responsivecolorproject.Properties.Resources.user;
+            this.pictureBox1.Location = new System.Drawing.Point(541, 351);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(121, 111);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(525, 319);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(156, 20);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Raimbow Mode State;";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 609);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.buttonRainbow2);
+            this.Controls.Add(this.buttonRainbow);
             this.Controls.Add(this.panelMenu);
             this.Name = "Form1";
             this.Text = "Form1";
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCreeper)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -202,5 +252,9 @@
         private Button buttonHome;
         private Panel panelLogo;
         private PictureBox pictureBoxCreeper;
+        private Button buttonRainbow;
+        private Button buttonRainbow2;
+        private PictureBox pictureBox1;
+        private Label label1;
     }
 }

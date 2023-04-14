@@ -1,35 +1,32 @@
+using System.Drawing.Design;
+
 namespace responsivecolorproject
 {
     public partial class Form1 : Form
     {
-        //Fields
         Random random;
         Button currentButton;
         byte index, tempIndex;
+        List<Button> botonesMenu;
+        bool rainbowMode;
+
 
         public Form1()
         {
             InitializeComponent();
             random = new();
+            botonesMenu = new List<Button> { buttonHome, buttonUsers, buttonSettings, buttonHelp, buttonCredits };
+            currentButton = new Button();
         }
 
-        //private Color ChooseColor()
-        //{
-        //    byte tempIndex = (byte)random.Next(ThemeColor.ColorsList.Count);
-        //    string colorString = ThemeColor.ColorsList[tempIndex];
-        //    Color newColor = ColorTranslator.FromHtml(colorString);
-        //    return newColor;
-        //}
-
-        private void HighLight(Object button)
+        private void HighLight(Object button, bool hide)
         {
-
-            if(currentButton != (Button)button)
+            if (currentButton != (Button)button)
             {
-                UnHighLight();
+                if(hide) { UnHighLight(); }
                 currentButton = (Button)button;
                 tempIndex = (byte)random.Next(ThemeColor.ColorsList.Count);
-                while(tempIndex == index)
+                while (tempIndex == index)
                 {
                     tempIndex = (byte)random.Next(ThemeColor.ColorsList.Count);
                 }
@@ -37,14 +34,14 @@ namespace responsivecolorproject
                 currentButton.BackColor = ThemeColor.ColorsList[index];
                 currentButton.Font = new Font("Segoe UI", 11.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             }
-            
-        }   
-            
+        }
+
+
         private void UnHighLight()
         {
-            foreach(Control control in panelMenu.Controls)
+            foreach (Control control in panelMenu.Controls)
             {
-                if(control.GetType() == typeof(Button))
+                if (control.GetType() == typeof(Button))
                 {
                     control.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(41)))), ((int)(((byte)(47)))));
                     control.Font = new Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -54,30 +51,66 @@ namespace responsivecolorproject
 
         private void buttonHome_Click(object sender, EventArgs e)
         {
-            HighLight(sender);
+            HighLight(sender, true);
         }
 
         private void buttonUsers_Click(object sender, EventArgs e)
         {
-            HighLight(sender);
+            HighLight(sender, true);
+
 
         }
 
         private void buttonSettings_Click(object sender, EventArgs e)
         {
-            HighLight(sender);
+            HighLight(sender, true);
+
 
         }
 
         private void buttonHelp_Click(object sender, EventArgs e)
         {
-            HighLight(sender);
+            HighLight(sender, true);
 
+
+        }
+
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            rainbowMode = !rainbowMode;
+            if(rainbowMode) { pictureBox1.Image = Properties.Resources.R; } 
+            else { pictureBox1.Image = Properties.Resources.X; }
+
+            while(rainbowMode)
+            {
+                foreach (Button button in botonesMenu)
+                {
+                    HighLight(button, true);
+                    await Task.Delay(500);
+                }
+            }
+        }
+
+        private async void buttonRainbow2_Click(object sender, EventArgs e)
+        {
+            rainbowMode = !rainbowMode;
+
+            if (rainbowMode) { pictureBox1.Image = Properties.Resources.R; } //puse r poque nose, no pense en otro nombre jaja
+            else { pictureBox1.Image = Properties.Resources.X; }
+
+            while (rainbowMode)
+            {
+                foreach (Button button in botonesMenu)
+                {
+                    HighLight(button, false);
+                    await Task.Delay(500);
+                }
+            }
         }
 
         private void buttonCredits_Click(object sender, EventArgs e)
         {
-            HighLight(sender);
+            HighLight(sender, true);
 
         }
     }
