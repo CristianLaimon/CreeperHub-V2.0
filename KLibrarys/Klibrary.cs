@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace responsivecolorproject
+namespace responsivecolorproject.KLibrarys
 {
     public static class Klibrary
     {
@@ -21,7 +21,7 @@ namespace responsivecolorproject
                 red *= correctFactor;
                 green *= correctFactor;
                 blue *= correctFactor;
-            } 
+            }
             else  //More shiny :D
             {
                 red = (255 - red) * correctFactor + red;

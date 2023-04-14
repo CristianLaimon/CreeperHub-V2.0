@@ -37,6 +37,7 @@
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBoxCreeper = new System.Windows.Forms.PictureBox();
             this.panelHeader = new System.Windows.Forms.Panel();
+            this.panelChild = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCreeper)).BeginInit();
@@ -54,7 +55,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(206, 609);
+            this.panelMenu.Size = new System.Drawing.Size(206, 721);
             this.panelMenu.TabIndex = 0;
             // 
             // buttonCredits
@@ -170,6 +171,7 @@
             // pictureBoxCreeper
             // 
             this.pictureBoxCreeper.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBoxCreeper.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxCreeper.Image = global::responsivecolorproject.Properties.Resources.Creeper_Minecraft_PNG;
             this.pictureBoxCreeper.Location = new System.Drawing.Point(45, 19);
             this.pictureBoxCreeper.Name = "pictureBoxCreeper";
@@ -184,16 +186,27 @@
             this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHeader.Location = new System.Drawing.Point(206, 0);
             this.panelHeader.Name = "panelHeader";
-            this.panelHeader.Size = new System.Drawing.Size(818, 145);
+            this.panelHeader.Size = new System.Drawing.Size(806, 145);
             this.panelHeader.TabIndex = 1;
+            // 
+            // panelChild
+            // 
+            this.panelChild.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelChild.Location = new System.Drawing.Point(206, 145);
+            this.panelChild.Name = "panelChild";
+            this.panelChild.Size = new System.Drawing.Size(806, 576);
+            this.panelChild.TabIndex = 2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1024, 609);
+            this.ClientSize = new System.Drawing.Size(1012, 721);
+            this.Controls.Add(this.panelChild);
             this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.panelMenu);
+            this.MaximumSize = new System.Drawing.Size(1030, 768);
+            this.MinimumSize = new System.Drawing.Size(1030, 768);
             this.Name = "Form1";
             this.Text = "Form1";
             this.panelMenu.ResumeLayout(false);
@@ -214,5 +227,6 @@
         private Panel panelLogo;
         private PictureBox pictureBoxCreeper;
         private Panel panelHeader;
+        private Panel panelChild;
     }
 }

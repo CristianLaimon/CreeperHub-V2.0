@@ -1,4 +1,5 @@
 using System.Drawing.Design;
+using responsivecolorproject.KLibrarys;
 
 namespace responsivecolorproject
 {
@@ -51,6 +52,7 @@ namespace responsivecolorproject
         private void buttonHome_Click(object sender, EventArgs e)
         {
             HighLight(sender, true);
+            Kforms.OpenChildForm(panelChild, new Forms.Home());
         }
 
         private void buttonUsers_Click(object sender, EventArgs e)
