@@ -36,6 +36,7 @@
             this.buttonHome = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictureBoxCreeper = new System.Windows.Forms.PictureBox();
+            this.panelHeader = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCreeper)).BeginInit();
@@ -177,11 +178,21 @@
             this.pictureBoxCreeper.TabIndex = 1;
             this.pictureBoxCreeper.TabStop = false;
             // 
+            // panelHeader
+            // 
+            this.panelHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(41)))), ((int)(((byte)(47)))));
+            this.panelHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelHeader.Location = new System.Drawing.Point(206, 0);
+            this.panelHeader.Name = "panelHeader";
+            this.panelHeader.Size = new System.Drawing.Size(818, 145);
+            this.panelHeader.TabIndex = 1;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 609);
+            this.Controls.Add(this.panelHeader);
             this.Controls.Add(this.panelMenu);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -202,5 +213,6 @@
         private Button buttonHome;
         private Panel panelLogo;
         private PictureBox pictureBoxCreeper;
+        private Panel panelHeader;
     }
 }

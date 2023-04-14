@@ -8,6 +8,7 @@ namespace responsivecolorproject
         Button currentButton;
         static byte index;
         byte tempIndex;
+
         public Form1()
         {
             InitializeComponent();
@@ -29,6 +30,8 @@ namespace responsivecolorproject
                 index = tempIndex;
                 currentButton.BackColor = ThemeColor.ColorsList[index];
                 currentButton.Font = new Font("Segoe UI", 11.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+                panelHeader.BackColor = ThemeColor.ColorsList[index];
+                panelLogo.BackColor = Klibrary.ChangeColorBrightness(ThemeColor.ColorsList[index], -0.1);
             }
         }
 
