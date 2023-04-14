@@ -74,6 +74,7 @@
             this.buttonCredits.Text = "    Credits";
             this.buttonCredits.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonCredits.UseVisualStyleBackColor = true;
+            this.buttonCredits.Click += new System.EventHandler(this.buttonCredits_Click);
             // 
             // buttonHelp
             // 
@@ -93,6 +94,7 @@
             this.buttonHelp.Text = "    Help";
             this.buttonHelp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonHelp.UseVisualStyleBackColor = true;
+            this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
             // 
             // buttonSettings
             // 
@@ -112,6 +114,7 @@
             this.buttonSettings.Text = "    Settings";
             this.buttonSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonSettings.UseVisualStyleBackColor = true;
+            this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
             // 
             // buttonUsers
             // 
@@ -131,6 +134,7 @@
             this.buttonUsers.Text = "    Users";
             this.buttonUsers.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonUsers.UseVisualStyleBackColor = true;
+            this.buttonUsers.Click += new System.EventHandler(this.buttonUsers_Click);
             // 
             // buttonHome
             // 
@@ -150,6 +154,7 @@
             this.buttonHome.Text = "    Home";
             this.buttonHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonHome.UseVisualStyleBackColor = true;
+            this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
             // 
             // panelLogo
             // 

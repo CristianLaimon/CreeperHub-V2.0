@@ -8,7 +8,7 @@ namespace responsivecolorproject
 {
     public static class ThemeColor
     {
-        public static List<string> colors = new List<string> { "FEC200",
+        public static List<string> ColorsList = new List<string> { "FEC200",
                                                                "FE5632",
                                                                "C60139",
                                                                "8F0B3D",
