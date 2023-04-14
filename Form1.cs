@@ -78,8 +78,15 @@ namespace responsivecolorproject
         private async void button1_Click(object sender, EventArgs e)
         {
             rainbowMode = !rainbowMode;
-            if(rainbowMode) { pictureBox1.Image = Properties.Resources.R; } 
-            else { pictureBox1.Image = Properties.Resources.X; }
+
+            if (rainbowMode)
+            { 
+                pictureBox1.Image = Properties.Resources.R; 
+            } 
+            else 
+            { 
+                pictureBox1.Image = Properties.Resources.X; 
+            }
 
             while(rainbowMode)
             {
@@ -95,8 +102,14 @@ namespace responsivecolorproject
         {
             rainbowMode = !rainbowMode;
 
-            if (rainbowMode) { pictureBox1.Image = Properties.Resources.R; } //puse r poque nose, no pense en otro nombre jaja
-            else { pictureBox1.Image = Properties.Resources.X; }
+            if (rainbowMode)
+            {
+                pictureBox1.Image = Properties.Resources.R;  //le puse r porque  si, no hay mas misterio
+            }
+            else
+            {
+                pictureBox1.Image = Properties.Resources.X;
+            }
 
             while (rainbowMode)
             {
