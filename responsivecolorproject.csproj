@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="MD Files\" />
+    <Folder Include="mdfiles\" />
   </ItemGroup>
 
 </Project>
