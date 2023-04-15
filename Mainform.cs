@@ -3,21 +3,23 @@ using responsivecolorproject.KLibrarys;
 
 namespace responsivecolorproject
 {
-    public partial class Form1 : Form
+    public partial class Mainform : Form
     {
         Random random;
         Button currentButton;
         static byte index;
         byte tempIndex;
+        Form currentForm;
 
-        public Form1()
+        public Mainform()
         {
             InitializeComponent();
             random = new();
             currentButton = new Button();
+            currentForm = new Form();
         }
 
-        private void HighLight(Object button, bool hide)
+        private void HighLight(Object button, bool hide) //hide es para si se quiere quitar el color de los botones pulsados antes y solo se coloree el que se pulsa. False para que los colores no se borren y se conserven
         {
             if (currentButton != (Button)button)
             {
@@ -30,7 +32,7 @@ namespace responsivecolorproject
                 }
                 index = tempIndex;
                 currentButton.BackColor = ThemeColor.ColorsList[index];
-                currentButton.Font = new Font("Segoe UI", 11.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+                currentButton.Font = new Font("Segoe UI", 11.8F, FontStyle.Bold, GraphicsUnit.Point);
                 panelHeader.BackColor = ThemeColor.ColorsList[index];
                 panelLogo.BackColor = Klibrary.ChangeColorBrightness(ThemeColor.ColorsList[index], -0.1);
             }
@@ -43,16 +45,31 @@ namespace responsivecolorproject
             {
                 if (control.GetType() == typeof(Button))
                 {
-                    control.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(41)))), ((int)(((byte)(47)))));
-                    control.Font = new Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+                    control.BackColor = Color.FromArgb((byte)(35), (byte)(41), (byte)(47));
+                    control.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
                 }
             }
+        }
+
+        public void OpenChildForm(Form child)
+        {
+            currentForm.Close();
+            currentForm = child;
+
+            child.FormBorderStyle = FormBorderStyle.None;
+            child.TopLevel = false;
+            child.Dock = DockStyle.Fill;
+
+            panelChild.Controls.Add(child);
+
+            child.BringToFront();
+            child.Show();
         }
 
         private void buttonHome_Click(object sender, EventArgs e)
         {
             HighLight(sender, true);
-            Kforms.OpenChildForm(panelChild, new Forms.Home());
+            OpenChildForm(new Mainform());
         }
 
         private void buttonUsers_Click(object sender, EventArgs e)
