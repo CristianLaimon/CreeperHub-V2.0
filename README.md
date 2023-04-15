@@ -3,3 +3,6 @@ This is a small project i started a while with "creeper" project. It's just GUI,
 
 Preview:
 ![creeper image](mdfiles/preview.png)
+
+Changes of color!
+![creeper image2](mdfiles/preview2.png)
